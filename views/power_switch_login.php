@@ -5,16 +5,12 @@
       <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   <meta name="description" content="A well made and handcrafted Bootstrap 5 template">
-  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon.png">
-  <link rel="stylesheet" href="css/auth_module_style.css">
+  <link rel="stylesheet" href="assets/css/auth_module_style.css">
   <meta name="author" content="Holger Koenemann">
   <meta name="generator" content="Eleventy v2.0.0">
   <meta name="HandheldFriendly" content="true">
   <title>Register a new account</title>
-  <link rel="stylesheet" href="css/theme.min.css">
+  <link rel="stylesheet" href="assets/css/theme.min.css">
 
 
   </head>
@@ -28,7 +24,7 @@
           
             <header class="mb-auto py-vh-2 col-12">
               <a class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center" href="index.html">
-                <img src="/img/logo/PowerSwitch - White.png" alt="" width="147.6" height="71.8">
+                <img src="assets/logo/logo-blanc.png" alt="" width="147.6" height="71.8">
               </a>
 
             </header>
