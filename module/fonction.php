@@ -27,7 +27,7 @@
         global $database_connector;
         $sql_request = "insert into testdonne values(null,:test)";
         $statement = $database_connector->prepare($sql_request);
-        $statement->bindParam(':test', $test, PDO::PARAM_INT);
+        $statement->bindParam(':test', $test, PDO::PARAM_STR);
         $statement->execute();
         $statement->closeCursor();
     };
@@ -53,12 +53,12 @@ function singin($fn,$ln,$gender,$mail,$mdp,$nickname)
     global $database_connector;
     $sql_request = "insert into power_switch_user values(null,':fn',':ln',':gender',':mail',':mdp',':nickname') select max(power_switch_user_id) from power_switch_user";
     $statement = $database_connector->prepare($sql_request);
-    $statement->bindParam(':fn', $fn, PDO::PARAM_INT);
-    $statement->bindParam(':ln', $ln, PDO::PARAM_INT);
+    $statement->bindParam(':fn', $fn, PDO::PARAM_STR);
+    $statement->bindParam(':ln', $ln, PDO::PARAM_STR);
     $statement->bindParam(':gender', $gender, PDO::PARAM_INT);
-    $statement->bindParam(':mail', $mdp, PDO::PARAM_INT);
-    $statement->bindParam(':mdp', $mdp, PDO::PARAM_INT);
-    $statement->bindParam(':nickname', $fn, PDO::PARAM_INT);
+    $statement->bindParam(':mail', $mdp, PDO::PARAM_STR);
+    $statement->bindParam(':mdp', $mdp, PDO::PARAM_STR);
+    $statement->bindParam(':nickname', $fn, PDO::PARAM_STR);
     $statement->execute();
     $statement->closeCursor();
 }
@@ -188,10 +188,10 @@ function creerPouvoir($nom,$damage,$accuracy,$mana,$effect,$element,$type,$rarit
     $sql_request = "insert into power_switch_superpower values(null,:nom,:damage,:accuracy,:mana,:effect,(select power_switch_element_id from power_switch_element where power_switch_element_id=:element),(select power_switch_type_id from power_switch_type where power_switch_type_id=:type),(select power_switch_rarity_id from power_switch_rarity where power_switch_rarity_id=:rarity)";
     $statement = $database_connector->prepare($sql_request);
     $statement->bindParam(':nom', $id, PDO::PARAM_INT);
-    $statement->bindParam(':damage', $obj, PDO::PARAM_INT);
+    $statement->bindParam(':damage', $obj, PDO::PARAM_DOUBLE);
     $statement->bindParam(':accuracy', $id, PDO::PARAM_INT);
     $statement->bindParam(':mana', $obj, PDO::PARAM_INT);
-    $statement->bindParam(':effect', $id, PDO::PARAM_INT);
+    $statement->bindParam(':effect', $id, PDO::PARAM_STR);
     $statement->bindParam(':element', $obj, PDO::PARAM_INT);
     $statement->bindParam(':type', $id, PDO::PARAM_INT);
     $statement->bindParam(':rarity', $obj, PDO::PARAM_INT);
@@ -205,7 +205,7 @@ function envoieMess($id1,$mess,$id2)
     $statement = $database_connector->prepare($sql_request);
     $statement->bindParam(':id1', $id1, PDO::PARAM_INT);
     $statement->bindParam(':id2', $id2, PDO::PARAM_INT);
-    $statement->bindParam(':mess', $mess, PDO::PARAM_INT);
+    $statement->bindParam(':mess', $mess, PDO::PARAM_STR);
     $statement->execute();
     $statement->closeCursor();
 }
