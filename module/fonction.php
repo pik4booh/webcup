@@ -36,7 +36,7 @@ function login($mail,$mdp)
 {
     global $database_connector;
 
-    $sql_request = "SELECT power_switch_user_id from power_switch_user where power_switch_user_email=:mail and power_switch_user_password=:mdp";
+    $sql_request = 'SELECT power_switch_user_id from power_switch_user where power_switch_user_email="'.$mail.'" and power_switch_user_password="'.$mdp.'"';
     $statement = $database_connector->prepare($sql_request);
     $statement->execute();
     $statistics = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -48,24 +48,18 @@ function login($mail,$mdp)
     echo '</pre>';
 
 }
-function singin($fn,$ln,$gender,$mail,$mdp,$nickname)
+function singin($fn, $ln, $gender, $mail, $mdp, $nickname)
 {
     global $database_connector;
-    $sql_request = "insert into power_switch_user values(null,':fn',':ln',':gender',':mail',':mdp',':nickname') select max(power_switch_user_id) from power_switch_user";
+    $sql_request = 'INSERT INTO power_switch_user VALUES (null,"'.$fn.'", "'.$ln.'", "'.$gender.'", "'.$mail.'", "'.$mdp.'", "'.$nickname.'")';
     $statement = $database_connector->prepare($sql_request);
-    $statement->bindParam(':fn', $fn, PDO::PARAM_STR);
-    $statement->bindParam(':ln', $ln, PDO::PARAM_STR);
-    $statement->bindParam(':gender', $gender, PDO::PARAM_INT);
-    $statement->bindParam(':mail', $mail, PDO::PARAM_STR);
-    $statement->bindParam(':mdp', $mdp, PDO::PARAM_STR);
-    $statement->bindParam(':nickname', $nickname, PDO::PARAM_STR);
     $statement->execute();
     $statement->closeCursor();
 }
 function addPower($idU,$pow1,$pow2,$pow3)
 {
     global $database_connector;
-    $sql_request = "insert into power_switch_transaction values(null,:idU,:pow1,:idU,:pow1,now(),now(),now()),insert into power_switch_transaction values(null,:idU,:pow2,:idU,:pow2,now(),now(),now()),insert into power_switch_transaction values(null,:idU,:pow3,:idU,:pow3,now(),now(),now())";
+    $sql_request = 'insert into power_switch_transaction values(null,"'.$idU.'",:pow1,:idU,:pow1,now(),now(),now()),insert into power_switch_transaction values(null,:idU,:pow2,:idU,:pow2,now(),now(),now()),insert into power_switch_transaction values(null,:idU,:pow3,:idU,:pow3,now(),now(),now())';
     $statement = $database_connector->prepare($sql_request);
     $statement->bindParam(':idU', $idU, PDO::PARAM_INT);
     $statement->bindParam(':pow1', $pow1, PDO::PARAM_INT);

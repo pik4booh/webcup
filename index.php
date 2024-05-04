@@ -28,7 +28,7 @@ Flight::route('/', function () {
     echo 'huhu world!';
 });
 Flight::route('/login', function () {
-    $data = Flight::request()->data;
+    $data = Flight::request()->query;
 
     $mail = $data['mail'];
     $mdp = $data['mdp'];
@@ -38,7 +38,7 @@ Flight::route('/insert/@test', function ($test) {
     inserttest($test);
 });
 Flight::route('/signup', function () {
-    $data = Flight::request()->data;
+    $data = Flight::request()->query;
     $fn = $data['fn'];
     $ln = $data['ln'];
     $gender = $data['gender'];
@@ -48,11 +48,11 @@ Flight::route('/signup', function () {
     singin($fn,$ln,$gender,$mail,$mdp,$nickname);
 });
 Flight::route('/shuffle', function () {
-    $data = Flight::request()->data;
+    $data = Flight::request()->query;
     shuffleItem();
 });
 Flight::route('/choices', function () {
-    $data = Flight::request()->data;
+    $data = Flight::request()->query;
     $id = $data['id'];
     $c1 = $data['c1'];
     $c2 = $data['c2'];
@@ -87,7 +87,7 @@ Flight::route('/getChat/@id/@id2',function ($id,$id2){
     getMess($id,$id2);
 });
 Flight::route('/setChat',function (){
-    $data = Flight::request()->data;
+    $data = Flight::request()->query;
     $id=$data['id'];
     $id2=$data['id2'];
     $mess=$data['message'];
@@ -98,7 +98,7 @@ Flight::route('/historique/@id',function ($id){
 });
 
 Flight::route('/createPower',function (){
-    $data = Flight::request()->data;
+    $data = Flight::request()->query;
     $nom=$data['id'];
     $damage=$data['id2'];
     $accuracy=$data['message'];
