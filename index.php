@@ -57,30 +57,30 @@ Flight::route('/choices', function () {
     $c1 = $data['c1'];
     $c2 = $data['c2'];
     $c3 = $data['c3'];
-    singin($fn,$ln,$gender,$mail,$mdp,$nickname);
+    singin($id,$c1,$c2,$c3);
 });
 Flight::route('/dispo/@id/@minidpage', function ($id,$minidpage) {
     pouvoirsinsteressants($id,$minidpage);
 });
-Flight::route('/other', function ($id,$minidpage) {
+Flight::route('/other', function ($id) {
     mespouvoirs($id);
 });
 Flight::route('/historique', function ($id) {
     historique($id);
 });
 Flight::route('/startTransaction', function () {
-    $data = Flight::request()->data;
+    $data = Flight::request()->query;
     $id=$data['id'];
     $obj=$data['obj'];
     create($id,$obj);
 });
-Flight::route('/validate', function ($idT,$id,$obj) {
+Flight::route('/validate/@idT/@id/@obj', function ($idT,$id,$obj) {
     valide($idT,$id,$obj);
 });
-Flight::route('/negate', function ($idT,$id,$obj) {
+Flight::route('/negate/@idT/@id/@obj', function ($idT,$id,$obj) {
     negate($idT,$id,$obj);
 });
-Flight::route('/non_valide_transaction', function ($id) {
+Flight::route('/non_valide_transaction/@id', function ($id) {
     nonvalide($id);
 });
 Flight::route('/getChat/@id/@id2',function ($id,$id2){
