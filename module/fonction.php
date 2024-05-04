@@ -56,15 +56,9 @@ function singin($fn,$ln,$gender,$mail,$mdp,$nickname)
     $statement->bindParam(':fn', $fn, PDO::PARAM_STR);
     $statement->bindParam(':ln', $ln, PDO::PARAM_STR);
     $statement->bindParam(':gender', $gender, PDO::PARAM_INT);
-<<<<<<< HEAD
-    $statement->bindParam(':mail', $mdp, PDO::PARAM_STR);
-    $statement->bindParam(':mdp', $mdp, PDO::PARAM_STR);
-    $statement->bindParam(':nickname', $fn, PDO::PARAM_STR);
-=======
     $statement->bindParam(':mail', $mail, PDO::PARAM_INT);
     $statement->bindParam(':mdp', $mdp, PDO::PARAM_INT);
     $statement->bindParam(':nickname', $nickname, PDO::PARAM_INT);
->>>>>>> back
     $statement->execute();
     $statement->closeCursor();
 }
