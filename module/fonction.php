@@ -31,7 +31,7 @@
         $statement->execute();
         $statement->closeCursor();
     };
-// lists
+// vraies
 function login($mail,$mdp)
 {
     global $database_connector;
@@ -56,6 +56,7 @@ function singin($fn,$ln,$gender,$mail,$mdp,$nickname)
     $statement->bindParam(':fn', $fn, PDO::PARAM_INT);
     $statement->bindParam(':ln', $ln, PDO::PARAM_INT);
     $statement->bindParam(':gender', $gender, PDO::PARAM_INT);
+    $statement->bindParam(':mail', $mdp, PDO::PARAM_INT);
     $statement->bindParam(':mdp', $mdp, PDO::PARAM_INT);
     $statement->bindParam(':nickname', $fn, PDO::PARAM_INT);
     $statement->execute();
@@ -156,7 +157,7 @@ function valide($idT,$id,$obj)
     $statement->execute();
     $statement->closeCursor();
 }
-function annuler($idT,$id,$obj)
+function negate($idT,$id,$obj)
 {
     global $database_connector;
     $sql_request = "update power_switch_transaction set power_switch_buyer_id=:id,power_switch_transaction_superpower=:obj,power_switch_reject_transaction_datetime=now()";
