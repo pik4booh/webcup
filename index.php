@@ -37,9 +37,8 @@ Flight::route('POST /login', function () {
 Flight::route('/insert/@test', function ($test) {
     inserttest($test);
 });
-Flight::route('POST /signup', function () {
+Flight::route('/signup', function () {
     $data = Flight::request()->data;
-
     $fn = $data['fn'];
     $ln = $data['ln'];
     $gender = $data['gender'];
@@ -48,11 +47,11 @@ Flight::route('POST /signup', function () {
     $nickname = $data['nickname'];
     singin($fn,$ln,$gender,$mail,$mdp,$nickname);
 });
-Flight::route('POST /shuffle', function () {
+Flight::route('/shuffle', function () {
     $data = Flight::request()->data;
     shuffleItem();
 });
-Flight::route('POST /choices', function () {
+Flight::route('/choices', function () {
     $data = Flight::request()->data;
     $id = $data['id'];
     $c1 = $data['c1'];
@@ -69,7 +68,7 @@ Flight::route('/other', function ($id,$minidpage) {
 Flight::route('/historique', function ($id) {
     historique($id);
 });
-Flight::route('POST /startTransaction', function () {
+Flight::route('/startTransaction', function () {
     $data = Flight::request()->data;
     $id=$data['id'];
     $obj=$data['obj'];
