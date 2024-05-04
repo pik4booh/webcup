@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html class="h-100" lang="en">
 
@@ -6,15 +5,12 @@
       <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   <meta name="description" content="A well made and handcrafted Bootstrap 5 template">
-  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/logo/logo-symbole.png">
   <meta name="author" content="Holger Koenemann">
   <meta name="generator" content="Eleventy v2.0.0">
   <meta name="HandheldFriendly" content="true">
   <title>Power Switch</title>
-  <link rel="stylesheet" href="css/theme.min.css">
+  <link rel="stylesheet" href="assets/css/theme.min.css">
 
    <style>
 
@@ -69,28 +65,28 @@
     <nav id="navScroll" class="navbar navbar-dark bg-black fixed-top px-vw-5" tabindex="0">
   <div class="container">
     <a class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center" href="index.html">
-        <img src="logo/logo-blanc.png" alt="" width="147.6" height="71.8">
+        <img src="assets/logo/logo-blanc.png" alt="" width="147.6" height="71.8">
     </a>
 
       <ul class="navbar-nav mx-auto mb-2 mb-lg-0 list-group list-group-horizontal">
       <li class="nav-item">
-  <a class="nav-link fs-5" href="index.html" aria-label="Homepage">
+  <a class="nav-link fs-5" href="/" aria-label="Homepage">
     Accueil
   </a>
 </li>
 <li class="nav-item">
-  <a class="nav-link fs-5" href="content.html" aria-label="A sample content page">
+  <a class="nav-link fs-5" href="#" aria-label="A sample content page">
     Tutoriel
   </a>
 </li>
 <li class="nav-item">
-  <a class="nav-link fs-5" href="system.html" aria-label="A system message page">
+  <a class="nav-link fs-5" href="#" aria-label="A system message page">
     Troquer
   </a>
 </li>
 
     </ul>
-      <a href="#" aria-label="Download this template" class="btn btn-light">
+      <a href="front/signin" aria-label="Download this template" class="btn btn-light">
         <small>S'inscrire</small>
       </a>
 </div>
@@ -113,9 +109,6 @@
             </div>
             <div class="col-12 text-center">
               <a href="#" class="btn btn-xl btn-light">Troquer
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-                </svg>
               </a>
             </div>
           </div>
@@ -135,13 +128,13 @@
     <div class="position-absolute w-100 h-50 bg-dark bottom-0 start-0"></div>
     <div class="row d-flex align-items-center position-relative justify-content-center px-0 g-5">
       <div class="col-12 col-lg-6">
-        <img src="img/webp/abstract18.png" width="2280" height="1732" alt="abstract image" class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up">
+        <img src="assets/img/webp/abstract18.png" width="2280" height="1732" alt="abstract image" class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up">
       </div>
       <div class="col-12 col-md-6 col-lg-3">
-        <img src="img/webp/abstract6.png" width="1116" height="1578" alt="abstract image" class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up" data-aos-duration="2000">
+        <img src="assets/img/webp/abstract6.png" width="1116" height="1578" alt="abstract image" class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up" data-aos-duration="2000">
       </div>
       <div class="col-12 col-md-6 col-lg-3">
-        <img src="img/webp/abstract9.png" width="1116" height="848" alt="abstract image" class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up" data-aos-duration="3000">
+        <img src="assets/img/webp/abstract9.png" width="1116" height="848" alt="abstract image" class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up" data-aos-duration="3000">
       </div>
     </div>
   </div>
@@ -155,22 +148,30 @@
     <div class="col-12 col-md-6">
       <div class="card bg-transparent mb-5" data-aos="zoom-in-up">
         <div class="bg-dark shadow rounded-5 p-0">
-          <img src="img/webp/abstract3.png" width="582" height="327" alt="abstract image" class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
+          <img src="assets/img/webp/abstract3.png" width="582" height="327" alt="abstract image" class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
           <div class="p-5">
             <h2 class="fw-lighter">Eau</h2>
             <p class="pb-4 text-secondary">Plongez dans les mystères de l'élément aquatique où les flux émotionnels rencontrent les secrets des profondeurs. Explorez la magie de l'eau, source de vie et de purification, capable de guérir et d'apaiser, mais aussi de déchaîner des tempêtes dévastatrices</p>
-            <a href="#" class="link-fancy link-fancy-light">en savoir plus</a>
+            <a href="#" class="link-fancy link-fancy-light">en savoir plus
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                </svg>
+            </a>
           </div>
         </div>
       </div>
 
       <div class="card bg-transparent" data-aos="zoom-in-up">
         <div class="bg-dark shadow rounded-5 p-0">
-          <img src="img/webp/abstract17.png" width="582" height="442" alt="abstract image" class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
+          <img src="assets/img/webp/abstract17.png" width="582" height="442" alt="abstract image" class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
           <div class="p-5">
             <h2 class="fw-lighter">Terre</h2>
             <p class="pb-4 text-secondary">Parcourez les vastes étendues de la terre, où la magie de la croissance et de la stabilité règne en maître. Découvrez les pouvoirs de l'élément solide, capable de nourrir, de protéger et de façonner le monde, mais aussi de trembler de colère et de détruire tout sur son passage.</p>
-            <a href="#" class="link-fancy link-fancy-light">en savoir plus</a>
+            <a href="#" class="link-fancy link-fancy-light">en savoir plus
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                </svg>
+            </a>
           </div>
         </div>
       </div>
@@ -182,22 +183,30 @@
       </div>
       <div class="card bg-transparent mb-5 mt-5" data-aos="zoom-in-up">
         <div class="bg-dark shadow rounded-5 p-0">
-          <img src="img/webp/abstract2.png" width="582" height="390" alt="abstract image" class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
+          <img src="assets/img/webp/abstract2.png" width="582" height="390" alt="abstract image" class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
           <div class="p-5">
             <h2 class="fw-lighter">Air</h2>
             <p class="pb-4 text-secondary">Envolez-vous vers les hauteurs du ciel et plongez dans l'essence de l'élément aérien, où la magie de la liberté et de la clairvoyance se déploie. Explorez les courants invisibles porteurs de messages, de rêves et d'inspiration, mais aussi capables de déclencher des tornades incontrôlables.</p>
-            <a href="#" class="link-fancy link-fancy-light">en savoir plus</a>
+            <a href="#" class="link-fancy link-fancy-light">en savoir plus
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                </svg>
+            </a>
           </div>
         </div>
       </div>
 
       <div class="card bg-transparent" data-aos="zoom-in-up">
         <div class="bg-dark shadow rounded-5 p-0">
-          <img src="img/webp/abstract4.png" width="582" height="327" alt="abstract image" class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
+          <img src="assets/img/webp/abstract4.png" width="582" height="327" alt="abstract image" class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
           <div class="p-5">
             <h2 class="fw-lighter">Feu</h2>
             <p class="pb-4 text-secondary">Bravez les flammes ardentes de l'élément feu, où la passion, la transformation et la destruction se rencontrent. Plongez dans la magie élémentaire de la chaleur et de la lumière, capable de purifier et de réchauffer, mais aussi de consumer tout sur son chemin dans un brasier infernal.</p>
-            <a href="#" class="link-fancy link-fancy-light">en savoir plus</a>
+            <a href="#" class="link-fancy link-fancy-light">en savoir plus
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                </svg>
+            </a>
           </div>
         </div>
       </div>
@@ -213,14 +222,14 @@
 </div>
 <div class="container-fluid px-vw-5 position-relative" data-aos="fade">
 <div class="position-absolute w-100 h-50 bg-black top-0 start-0"></div>
-<div class="position-relative py-vh-5 bg-cover bg-center rounded-5" style="background-image: url(img/webp/person103.png)">
+<div class="position-relative py-vh-5 bg-cover bg-center rounded-5" style="background-image: url(assets/img/webp/person103.png)">
   <div class="container bg-black px-vw-5 py-vh-3 rounded-5 shadow">
   <div class="row d-flex align-items-center">
 
   <div class="col-6 d-flex align-items-center bg-dark shadow rounded-5 p-0" data-aos="zoom-in-up">
     <div class="row d-flex justify-content-center">
       <div class="col-12">
-    <img src="img/webp/person103.png" width="684" height="457" alt="our CEO with some nice numbers" class="img-fluid rounded-5" loading="lazy">
+    <img src="assets/img/webp/person103.png" width="684" height="457" alt="our CEO with some nice numbers" class="img-fluid rounded-5" loading="lazy">
   </div>
   <div class="col-12 col-lg-10 col-xl-8 text-center my-5">
     <p class="lead border-bottom pb-4 border-secondary">Découvrez un univers où les frontières entre les possibles s'effacent : Bienvenue sur notre plateforme d'échange de pouvoirs, où les individus extraordinaires peuvent troquer leurs dons uniques pour réaliser des destinées encore plus grandioses.</p>
@@ -251,16 +260,16 @@
   <div class="container py-vh-4 text-secondary fw-lighter">
     <div class="row">
       <div class="col-12 col-lg-5 py-4 text-center text-lg-start">
-        <a class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center" href="index.html">
-          <img src="logo/logo-blanc.png" alt="" width="147.6" height="71.8">
-      </a>
+            <a class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center" href="index.html">
+            <img src="assets/logo/logo-blanc.png" alt="" width="147.6" height="71.8">
+</a>
 
       </div>
       <div class="col border-end border-dark">
                 <span class="h6">Lien</span>
                 <ul class="nav flex-column">
                   <li class="nav-item">
-                    <a href="#" class="link-fancy link-fancy-light">Accueil</a>
+                    <a href="/" class="link-fancy link-fancy-light">Accueil</a>
                   </li>
                   <li class="nav-item">
                     <a href="#" class="link-fancy link-fancy-light">Tutoriel</a>
@@ -284,8 +293,8 @@
 
 
 
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/aos.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/aos.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function() {
   const gradientContainer = document.getElementById('gradient-container');
