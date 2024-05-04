@@ -28,7 +28,7 @@ Flight::route('/', function () {
     // echo 'huhu world!';
 });
 Flight::route('/login', function () {
-    Flight::render('front/power_switch_login.html');
+    Flight::render('power_switch_login.php');
 });
 Flight::route('/login', function () {
     $data = Flight::request()->data;
@@ -40,8 +40,8 @@ Flight::route('/login', function () {
 Flight::route('/insert/@test', function ($test) {
     inserttest($test);
 });
-Flight::route('/signup', function () {
-    Flight::render('front/power_switch_signin.html');
+Flight::route('/signin', function () {
+    Flight::render('power_switch_signin.php');
 });
 Flight::route('/signup', function () {
     $data = Flight::request()->data;
@@ -350,7 +350,7 @@ Flight::start();
 </div>
 <div class="container-fluid px-vw-5 position-relative" data-aos="fade">
 <div class="position-absolute w-100 h-50 bg-black top-0 start-0"></div>
-<div class="position-relative py-vh-5 bg-cover bg-center rounded-5" style="background-image: url(img/webp/person103.png)">
+<div class="position-relative py-vh-5 bg-cover bg-center rounded-5" style="background-image: url(assets/img/webp/person103.png)">
   <div class="container bg-black px-vw-5 py-vh-3 rounded-5 shadow">
   <div class="row d-flex align-items-center">
 
