@@ -7,8 +7,12 @@ require 'module/connect.php';
 Flight::route('/', function () {
     echo 'huhu world!';
 });
-Flight::route('/huhu', function () {
-    findtest();
+Flight::route('POST /login', function () {
+    $data = Flight::request()->data;
+
+    $mail = $data['mail'];
+    $mdp = $data['mdp'];
+    login($mail,$mdp);
 });
 Flight::route('/insert/@test', function ($test) {
     inserttest($test);
