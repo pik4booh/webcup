@@ -27,7 +27,7 @@ Flight::before('start', function(){
 Flight::route('/', function () {
     echo 'huhu world!';
 });
-Flight::route('POST /login', function () {
+Flight::route('/login', function () {
     $data = Flight::request()->data;
 
     $mail = $data['mail'];
