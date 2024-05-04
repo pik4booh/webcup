@@ -28,6 +28,9 @@ Flight::route('/', function () {
     // echo 'huhu world!';
 });
 Flight::route('/login', function () {
+    Flight::render('front/power_switch_login.html');
+});
+Flight::route('/login', function () {
     $data = Flight::request()->data;
 
     $mail = $data['mail'];
@@ -36,6 +39,9 @@ Flight::route('/login', function () {
 });
 Flight::route('/insert/@test', function ($test) {
     inserttest($test);
+});
+Flight::route('/signup', function () {
+    Flight::render('front/power_switch_signin.html');
 });
 Flight::route('/signup', function () {
     $data = Flight::request()->data;
@@ -127,9 +133,7 @@ Flight::start();
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   <meta name="description" content="A well made and handcrafted Bootstrap 5 template">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/logo/logo-symbole.png">
   <meta name="author" content="Holger Koenemann">
   <meta name="generator" content="Eleventy v2.0.0">
   <meta name="HandheldFriendly" content="true">
@@ -194,23 +198,23 @@ Flight::start();
 
       <ul class="navbar-nav mx-auto mb-2 mb-lg-0 list-group list-group-horizontal">
       <li class="nav-item">
-  <a class="nav-link fs-5" href="index.html" aria-label="Homepage">
+  <a class="nav-link fs-5" href="/" aria-label="Homepage">
     Accueil
   </a>
 </li>
 <li class="nav-item">
-  <a class="nav-link fs-5" href="content.html" aria-label="A sample content page">
+  <a class="nav-link fs-5" href="#" aria-label="A sample content page">
     Tutoriel
   </a>
 </li>
 <li class="nav-item">
-  <a class="nav-link fs-5" href="system.html" aria-label="A system message page">
+  <a class="nav-link fs-5" href="#" aria-label="A system message page">
     Troquer
   </a>
 </li>
 
     </ul>
-      <a href="front/inscription" aria-label="Download this template" class="btn btn-light">
+      <a href="/signup" aria-label="Download this template" class="btn btn-light">
         <small>S'inscrire</small>
       </a>
 </div>
@@ -277,7 +281,7 @@ Flight::start();
             <h2 class="fw-lighter">Eau</h2>
             <p class="pb-4 text-secondary">Plongez dans les mystères de l'élément aquatique où les flux émotionnels rencontrent les secrets des profondeurs. Explorez la magie de l'eau, source de vie et de purification, capable de guérir et d'apaiser, mais aussi de déchaîner des tempêtes dévastatrices</p>
             <a href="#" class="link-fancy link-fancy-light">en savoir plus
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
                 </svg>
             </a>
@@ -292,7 +296,7 @@ Flight::start();
             <h2 class="fw-lighter">Terre</h2>
             <p class="pb-4 text-secondary">Parcourez les vastes étendues de la terre, où la magie de la croissance et de la stabilité règne en maître. Découvrez les pouvoirs de l'élément solide, capable de nourrir, de protéger et de façonner le monde, mais aussi de trembler de colère et de détruire tout sur son passage.</p>
             <a href="#" class="link-fancy link-fancy-light">en savoir plus
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
                 </svg>
             </a>
@@ -312,7 +316,7 @@ Flight::start();
             <h2 class="fw-lighter">Air</h2>
             <p class="pb-4 text-secondary">Envolez-vous vers les hauteurs du ciel et plongez dans l'essence de l'élément aérien, où la magie de la liberté et de la clairvoyance se déploie. Explorez les courants invisibles porteurs de messages, de rêves et d'inspiration, mais aussi capables de déclencher des tornades incontrôlables.</p>
             <a href="#" class="link-fancy link-fancy-light">en savoir plus
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
                 </svg>
             </a>
@@ -327,7 +331,7 @@ Flight::start();
             <h2 class="fw-lighter">Feu</h2>
             <p class="pb-4 text-secondary">Bravez les flammes ardentes de l'élément feu, où la passion, la transformation et la destruction se rencontrent. Plongez dans la magie élémentaire de la chaleur et de la lumière, capable de purifier et de réchauffer, mais aussi de consumer tout sur son chemin dans un brasier infernal.</p>
             <a href="#" class="link-fancy link-fancy-light">en savoir plus
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
                 </svg>
             </a>
@@ -393,7 +397,7 @@ Flight::start();
                 <span class="h6">Lien</span>
                 <ul class="nav flex-column">
                   <li class="nav-item">
-                    <a href="#" class="link-fancy link-fancy-light">Accueil</a>
+                    <a href="/" class="link-fancy link-fancy-light">Accueil</a>
                   </li>
                   <li class="nav-item">
                     <a href="#" class="link-fancy link-fancy-light">Tutoriel</a>
