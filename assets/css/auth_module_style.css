@@ -1,0 +1,62 @@
+#side-picture-login {
+    background-image: url('../img/scenes/_2b191932-5e7a-4eba-a207-28210bd32930.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#side-picture-sign-in {
+    background-image: url('../img/scenes/_5ec7903f-e0ab-494a-9815-d8456caf28d6.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#login_button {
+    background-color: #fff;
+    color: #202020;
+}
+#login_button:hover {
+    background-color: #559ce3;
+    color: #fff;
+    font-size: 18.5px;
+    font-weight: bold;
+}
+
+/* Sign Up */
+#signup-gender-dropdown {
+    color: #fff;
+}
+#signup-gender-dropdown:focus {
+    color: #202020;
+}
+
+.step {
+    display: none;
+}
+
+.step:first-child {
+    display: block;
+}
+
+.to-the-right {
+    margin-top: -19.5%;
+    text-align: right;
+}
+
+.btn.btn-white.btn-xl.mb-4.next-button {
+    background-color: #fff;
+    color: #202020;
+    font-weight: 600;
+}
+.btn.btn-white.btn-xl.mb-4.next-button:hover {
+    background-color: rgb(247, 198, 112);
+}
+
+.link {
+    color: #fff;
+    font-size: 16px;
+}
+.link:hover {
+    color: #e3e3e3;
+    font-size: 16px;
+}
+/* End Sign Up */
