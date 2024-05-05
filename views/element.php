@@ -114,36 +114,7 @@
 
 
 
-<div class="w-100 position-relative bg-black text-white bg-cover d-flex align-items-center">
-  <div class="container-fluid px-vw-5">
-    <div class="position-absolute w-100 h-50 bg-dark bottom-0 start-0"></div>
-    <div class="row d-flex align-items-center position-relative justify-content-center px-0 g-5">
-        <div class="col-12 col-md-6 col-lg-3" style="background-color: black; border-radius: 50px; padding:20px;">
-            <div class="elements">
-                <div class="element" style="display:inline-flex; z-index:100;">
-                    <h1>Title</h1>
-                    <img src="assets/img/stars/5.png" alt="">
-                </div>
-            </div>
-            <img src="assets/img/webp/abstract6.png" width="1116" height="1578" alt="abstract image" class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up" data-aos-duration="2000">
-            <div class="col-12 col-lg-10 col-xl-8 text-center my-5" style="display:inline-flex; background-color:black;">
-                <div><img src="assets/img/spell/explosion.svg" alt="" width="50"><span>150 dmg</span></div>
-                <div><img src="assets/img/spell/rune.svg" alt="" width="50"><span>50%</span></div>
-                <div><img src="assets/img/spell/scope.svg" alt="" width="50"><span>30 mana</span></div>
-            </div>
-            <div class="col-12 col-lg-10 col-xl-8 text-center my-5">
-                <p class="text-secondary text-center">Description of the power</p>
-            </div>
-        </div>
-
-    </div>
-  </div>
 </div>
-
-</div>
-<br>
-<br>
-<br>
 
 
 
