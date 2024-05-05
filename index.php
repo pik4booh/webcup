@@ -29,6 +29,10 @@ Flight::route('/', function () {
   Flight::render('home.php');
 });
 
+Flight::route('/creation', function () {
+    Flight::render('creation.php');
+  });
+
 Flight::route('/login-page', function () {
   Flight::render('power_switch_login.php');
 });
