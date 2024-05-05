@@ -41,14 +41,14 @@
         $sql_request = 'SELECT power_switch_user_id from power_switch_user where power_switch_user_email="'.$mail.'" and power_switch_user_password="'.$mdp.'"';
         $statement = $database_connector->prepare($sql_request);
         $statement->execute();
-        $statistics = $statement->fetchAll(PDO::FETCH_ASSOC);
-        $statistics_json = json_encode($statistics);
-    
-        $statement->closeCursor();
-        echo '<pre>';
-        print_r($statistics_json);
-        echo '</pre>';
-    
+        $statistics = $statement->fetch(PDO::FETCH_ASSOC);
+        // $statistics_json = json_encode($statistics);
+
+        // $statement->closeCursor();
+        // echo '<pre>';
+        // print_r($statistics_json);
+        // echo '</pre>';
+        return $statistics;
     }
     function singin($fn, $ln, $gender, $mail, $mdp, $nickname)
     {
