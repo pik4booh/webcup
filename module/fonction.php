@@ -192,7 +192,8 @@
     function creerPouvoir($nom,$damage,$accuracy,$mana,$effect,$element,$type,$rarity)
     {
         global $database_connector;
-        $sql_request = 'insert into power_switch_superpower values(null,"'.$nom.'","'.$damage.'","'.$accuracy.'","'.$mana.'","'.$effect.'",(select power_switch_element_id from power_switch_element where power_switch_element_id="'.$element.'"),(select power_switch_type_id from power_switch_type where power_switch_type_id="'.$type.'"),(select power_switch_rarity_id from power_switch_rarity where power_switch_rarity_id="'.$rarity.'")';
+        $sql_request = 'insert into power_switch_superpower values(null,"'.$nom.'","'.$damage.'","'.$accuracy.'","'.$mana.'","'.$effect.'",(select power_switch_element_id from power_switch_element where power_switch_element_name ="'.$element.'"),(select power_switch_type_id from power_switch_type where power_switch_type_name="'.$type.'"),"'.$rarity.'")';
+        echo $sql_request;
         $statement = $database_connector->prepare($sql_request);
         $statement->execute();
         $statement->closeCursor();
@@ -237,7 +238,7 @@
         $sql_request = "select max(power_switch_superpower_id) from power_switch_superpower";
         $statement = $database_connector->prepare($sql_request);
         $statement->execute();
-        $superpower = $statement->fetchColumn();
+        $superpower = $statement->fetch(PDO::FETCH_ASSOC);
         return $superpower;
     }
 

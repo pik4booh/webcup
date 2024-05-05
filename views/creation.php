@@ -155,7 +155,7 @@
         <div class="container py-vh-4 position-relative mt-5 px-vw-5 text-center">
           <div class="row d-flex align-items-center justify-content-center py-vh-5">
             <div class="col-12 col-xl-10">
-              <span class="h5 text-secondary fw-lighter">La manoire a voeaux</span>
+              <span class="h5 text-secondary fw-lighter">La manoir a sorts</span>
               <h1 class="display-huge mt-3 mb-3 lh-1"><b>Ici vous pouver avoire tous ce que vous voulez</b></h1>
             </div>
             <div class="col-12 col-xl-8">
@@ -165,7 +165,7 @@
             <form action="create-superpower" method="POST" class="row">
                 <div class="col-12">
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Enrer votre voeux</label>
+                    <label for="exampleInputEmail1" class="form-label">Entrer votre demande</label>
                     <input name="superpower-prompt" type="text" class="form-control form-control-lg bg-gray-800 border-dark" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <button type="submit" id="login_button" class="btn btn-white btn-xl mb-4">Exaucer</button>

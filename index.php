@@ -130,19 +130,25 @@ Flight::route('/create-superpower',function (){
   $data = Flight::request()->data;
   $prompt = $data['superpower-prompt'];
   $superpower_characteristics = generatePouvoire($prompt);
+
   // var_dump($superpower_characteristics);
-  $nom=$superpower_characteristics[0];
-  $damage=$data[1];
-  $accuracy=$data[2];
-  $mana=$data[3];
-  $effect=$data[4];
-  $element=$data[5];
-  $type=$data[6];
-  $rarity=$data[6];
+
+  $nom=preg_replace('/^\s+|\s+$/u', '', $superpower_characteristics[0]);
+  $damage=preg_replace('/^\s+|\s+$/u', '', $superpower_characteristics[1]);
+  $accuracy=preg_replace('/^\s+|\s+$/u', '', $superpower_characteristics[2]);
+  $mana=preg_replace('/^\s+|\s+$/u', '', $superpower_characteristics[3]);
+  $effect=preg_replace('/^\s+|\s+$/u', '', $superpower_characteristics[4]);
+  $element=preg_replace('/^\s+|\s+$/u', '', $superpower_characteristics[5]);
+  var_dump($element);
+  $type=preg_replace('/^\s+|\s+$/u', '', $superpower_characteristics[6]);
+  $rarity=$superpower_characteristics[7];
+
+  session_start();
   creerPouvoir($nom,$damage,$accuracy,$mana,$effect,$element,$type,$rarity);
-  // $last_superpower = get_last_superpower();
-  // set_user_superpower($_SESSION['user_id'], $last_superpower);
-  // Flight::redirect('/create-superpower');
+  $last_superpower = get_last_superpower();
+  $user_id = $_SESSION['user_id'];
+  set_user_superpower($user_id, $last_superpower["max(power_switch_superpower_id)"]);
+  Flight::redirect('/create-superpower');
 });
 
 Flight::route('GET /genders', function (){
