@@ -180,16 +180,16 @@
     function creerPouvoir($nom,$damage,$accuracy,$mana,$effect,$element,$type,$rarity)
     {
         global $database_connector;
-        $sql_request = "insert into power_switch_superpower values(null,:nom,:damage,:accuracy,:mana,:effect,(select power_switch_element_id from power_switch_element where power_switch_element_id=:element),(select power_switch_type_id from power_switch_type where power_switch_type_id=:type),(select power_switch_rarity_id from power_switch_rarity where power_switch_rarity_id=:rarity)";
+        $sql_request = "insert into power_switch_superpower values(null,:nom,:damage,:accuracy,:mana,:effect,(select power_switch_element_id from power_switch_element where power_switch_element_id=:element),(select power_switch_type_id from power_switch_type where power_switch_type_id=:type),(select power_switch_rarity_id from power_switch_rarity where power_switch_rarity_id=:rarity))";
         $statement = $database_connector->prepare($sql_request);
-        $statement->bindParam(':nom', $id, PDO::PARAM_INT);
-        $statement->bindParam(':damage', $obj, PDO::PARAM_DOUBLE);
-        $statement->bindParam(':accuracy', $id, PDO::PARAM_INT);
-        $statement->bindParam(':mana', $obj, PDO::PARAM_INT);
-        $statement->bindParam(':effect', $id, PDO::PARAM_STR);
-        $statement->bindParam(':element', $obj, PDO::PARAM_INT);
-        $statement->bindParam(':type', $id, PDO::PARAM_INT);
-        $statement->bindParam(':rarity', $obj, PDO::PARAM_INT);
+        $statement->bindParam(':nom', $nom, PDO::PARAM_INT);
+        $statement->bindParam(':damage', $damage, PDO::PARAM_INT);
+        $statement->bindParam(':accuracy', $accuracy, PDO::PARAM_INT);
+        $statement->bindParam(':mana', $mana, PDO::PARAM_INT);
+        $statement->bindParam(':effect', $effect, PDO::PARAM_STR);
+        $statement->bindParam(':element', $element, PDO::PARAM_INT);
+        $statement->bindParam(':type', $type, PDO::PARAM_INT);
+        $statement->bindParam(':rarity', $rarity, PDO::PARAM_INT);
         $statement->execute();
         $statement->closeCursor();
     }

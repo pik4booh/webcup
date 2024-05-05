@@ -46,7 +46,7 @@ Flight::route('/signup-page', function () {
 
 // Data Game Routes
 Flight::route('/login', function () {
-  $data = Flight::request()->query;
+  $data = Flight::request()->data;
 
   $mail = $data['mail'];
   $mdp = $data['mdp'];
@@ -54,7 +54,7 @@ Flight::route('/login', function () {
   // var_dump($login_data);
   session_start();
   $_SESSION['user_id'] = $login_data['power_switch_user_id'];
-  Flight:redirect('/creation');
+  Flight::redirect('/creation');
 });
 
 Flight::route('/signup', function () {
@@ -127,10 +127,10 @@ Flight::route('/chat/send-message',function (){
 });
 
 Flight::route('/create-superpower',function (){
-  $data = Flight::request()->query;
+  $data = Flight::request()->data;
   $prompt = $data['superpower-prompt'];
   $superpower_characteristics = generatePouvoire($prompt);
-
+  // var_dump($superpower_characteristics);
   $nom=$superpower_characteristics[0];
   $damage=$data[1];
   $accuracy=$data[2];
@@ -140,9 +140,9 @@ Flight::route('/create-superpower',function (){
   $type=$data[6];
   $rarity=$data[6];
   creerPouvoir($nom,$damage,$accuracy,$mana,$effect,$element,$type,$rarity);
-  $last_superpower = get_last_superpower();
-  set_user_superpower($_SESSION['user_id'], $last_superpower);
-  Flight::redirect('/create-superpower');
+  // $last_superpower = get_last_superpower();
+  // set_user_superpower($_SESSION['user_id'], $last_superpower);
+  // Flight::redirect('/create-superpower');
 });
 
 Flight::route('GET /genders', function (){
@@ -152,8 +152,12 @@ Flight::route('GET /genders', function (){
 // End Data Game Routes
 
 
-Flight::map('error', function(Exception $ex){
-  echo $ex->getMessage();
+Flight::map('error', function($ex) {
+  if ($ex instanceof Exception || $ex instanceof Error) {
+      echo $ex->getMessage();
+  } else {
+      echo "An error occurred.";
+  }
 });
 
 Flight::start();
