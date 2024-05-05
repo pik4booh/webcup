@@ -124,10 +124,8 @@
     {
         global $database_connector;
     
-        $sql_request = "select * from listpouvoir where power_switch_superpower_id not in (select power_switch_superpower_id from power_switch_user_superpowers where power_switch_user_id=:id) and power_switch_superpower_id>:minid";
+        $sql_request = 'select * from listpouvoir where power_switch_superpower_id not in (select power_switch_superpower_id from power_switch_user_superpowers where power_switch_user_id="'.$id.'") and power_switch_superpower_id>"'.$minid.'"';
         $statement = $database_connector->prepare($sql_request);
-        $statement->bindParam(':id', $id, PDO::PARAM_INT);
-        $statement->bindParam(':minid', $minid, PDO::PARAM_INT);
         $statement->execute();
         $statistics = $statement->fetchAll(PDO::FETCH_ASSOC);
         $statistics_json = json_encode($statistics);
@@ -140,9 +138,8 @@
     {
         global $database_connector;
     
-        $sql_request = "select * from listtransaction where power_switch_seller_id=:id or power_switch_buyer_id=:id";
+        $sql_request = 'select * from listtransaction where power_switch_seller_id="'.$id.'" or power_switch_buyer_id="'.$id.'"';
         $statement = $database_connector->prepare($sql_request);
-        $statement->bindParam(':id', $id, PDO::PARAM_INT);
         $statement->execute();
         $statistics = $statement->fetchAll(PDO::FETCH_ASSOC);
         $statistics_json = json_encode($statistics);
