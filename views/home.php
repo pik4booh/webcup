@@ -11,6 +11,7 @@
   <meta name="HandheldFriendly" content="true">
   <title>Power Switch</title>
   <link rel="stylesheet" href="assets/css/theme.min.css">
+  <link rel="stylesheet" href="assets/css/home_module_style.css">
 
    <style>
 
@@ -86,8 +87,8 @@
 </li>
 
     </ul>
-      <a href="front/signin" aria-label="Download this template" class="btn btn-light">
-        <small>S'inscrire</small>
+      <a href="login-page" class="btn btn-light log-in">
+        <small>Se connecter</small>
       </a>
 </div>
 </nav>
@@ -100,12 +101,11 @@
         <div class="container py-vh-4 position-relative mt-5 px-vw-5 text-center">
           <div class="row d-flex align-items-center justify-content-center py-vh-5">
             <div class="col-12 col-xl-10">
-              
-              <span class="h5 text-secondary fw-lighter">Bienvenue</span>
-              <h1 class="display-huge mt-3 mb-3 lh-1">Echangez vos Super Pouvoirs</h1>
+              <span class="h5 text-secondary fw-lighter">Collectionez-les tous</span>
+              <h1 class="display-huge mt-3 mb-3 lh-1"><b>Echangez vos Superpouvoirs</b></h1>
             </div>
             <div class="col-12 col-xl-8">
-              <p class="lead text-secondary">Épicez votre Destinée avec de Nouvelles Capacités!</p>
+              <p class="lead text-secondary">Lancez-vous et forgez-vous le meilleur set de sorts</p>
             </div>
             <div class="col-12 text-center">
               <a href="#" class="btn btn-xl btn-light">Troquer
@@ -152,7 +152,7 @@
           <div class="p-5">
             <h2 class="fw-lighter">Eau</h2>
             <p class="pb-4 text-secondary">Plongez dans les mystères de l'élément aquatique où les flux émotionnels rencontrent les secrets des profondeurs. Explorez la magie de l'eau, source de vie et de purification, capable de guérir et d'apaiser, mais aussi de déchaîner des tempêtes dévastatrices</p>
-            <a href="#" class="link-fancy link-fancy-light">en savoir plus
+            <a href="#" class="link-fancy link-fancy-light">En savoir plus
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
                 </svg>
@@ -167,7 +167,7 @@
           <div class="p-5">
             <h2 class="fw-lighter">Terre</h2>
             <p class="pb-4 text-secondary">Parcourez les vastes étendues de la terre, où la magie de la croissance et de la stabilité règne en maître. Découvrez les pouvoirs de l'élément solide, capable de nourrir, de protéger et de façonner le monde, mais aussi de trembler de colère et de détruire tout sur son passage.</p>
-            <a href="#" class="link-fancy link-fancy-light">en savoir plus
+            <a href="#" class="link-fancy link-fancy-light">En savoir plus
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
                 </svg>
@@ -178,7 +178,7 @@
     </div>
     <div class="col-12 col-md-6">
       <div class="p-5 pt-0 mt-5" data-aos="fade">
-        <span class="h5 text-secondary fw-lighter">Alors, on y vas</span>
+        <span class="h5 text-secondary fw-lighter"></span>
         <h2 class="display-4">Explorez un monde enchanté où les différentes catégories de magie vous attendent</h2>
       </div>
       <div class="card bg-transparent mb-5 mt-5" data-aos="zoom-in-up">
@@ -187,7 +187,7 @@
           <div class="p-5">
             <h2 class="fw-lighter">Air</h2>
             <p class="pb-4 text-secondary">Envolez-vous vers les hauteurs du ciel et plongez dans l'essence de l'élément aérien, où la magie de la liberté et de la clairvoyance se déploie. Explorez les courants invisibles porteurs de messages, de rêves et d'inspiration, mais aussi capables de déclencher des tornades incontrôlables.</p>
-            <a href="#" class="link-fancy link-fancy-light">en savoir plus
+            <a href="#" class="link-fancy link-fancy-light">En savoir plus
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
                 </svg>
@@ -202,7 +202,7 @@
           <div class="p-5">
             <h2 class="fw-lighter">Feu</h2>
             <p class="pb-4 text-secondary">Bravez les flammes ardentes de l'élément feu, où la passion, la transformation et la destruction se rencontrent. Plongez dans la magie élémentaire de la chaleur et de la lumière, capable de purifier et de réchauffer, mais aussi de consumer tout sur son chemin dans un brasier infernal.</p>
-            <a href="#" class="link-fancy link-fancy-light">en savoir plus
+            <a href="#" class="link-fancy link-fancy-light">En savoir plus
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
                 </svg>
@@ -238,15 +238,15 @@
 </div>
 </div>
   <div class="col-5 offset-1">
-    <span class="h5 text-secondary fw-lighter">Infinite de pouvoirs</span>
-    <h2 class="display-huge fw-bolder" data-aos="zoom-in-left">infinie</h2>
+    <span class="h5 text-secondary fw-lighter">Des combinaisons</span>
+    <h2 class="display-huge fw-bolder" data-aos="zoom-in-left">Infinies</h2>
 <p class="h4 fw-lighter text-secondary">
-  Explorez un univers où les limites n'existent pas.
+  Une variété de sort sans limite vous attend.
 </p>
 
 <h2 class="display-huge fw-bolder border-top border-secondary pt-5 mt-5" data-aos="zoom-in-left">6</h2>
 <p class="h4 fw-lighter text-secondary">
-  Découvrez les six voies de la magie, chacune offrant un chemin unique vers le pouvoir et la connaissance
+  Découvrez les six voies de la magie, chacune offrant un chemin unique vers le pouvoir et la connaissance.
 </p>
 </div>
   </div>

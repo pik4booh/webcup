@@ -21,7 +21,7 @@
     font-weight: bold;
 }
 
-/* Sign */
+/* Sign Up */
 #signup-gender-dropdown {
     color: #fff;
 }
@@ -49,6 +49,10 @@
 }
 .btn.btn-white.btn-xl.mb-4.next-button:hover {
     background-color: rgb(247, 198, 112);
-    /* font-weight: bolder; */
 }
-/* End Sign In */
+
+#signup-page-link {
+    color: #fff;
+    font-size: 16px;
+}
+/* End Sign Up */
