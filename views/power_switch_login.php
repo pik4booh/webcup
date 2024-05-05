@@ -44,7 +44,7 @@
   <button type="submit" id="login_button" class="btn btn-white btn-xl mb-4">Se connecter</button>
 </div>
 </form>
-  <a id="signup-page-link" href="signup-page">Pas encore de compte ? Inscrivez-vous ici.</a>
+  <a class="link" href="signup-page">Pas encore de compte ? Inscrivez-vous ici.</a>
 
             </main>
           </div>

@@ -108,7 +108,7 @@
               <p class="lead text-secondary">Lancez-vous et forgez-vous le meilleur set de sorts</p>
             </div>
             <div class="col-12 text-center">
-              <a href="#" class="btn btn-xl btn-light">Troquer
+              <a href="signup-page" class="btn btn-xl btn-light">Je m'inscris
               </a>
             </div>
           </div>

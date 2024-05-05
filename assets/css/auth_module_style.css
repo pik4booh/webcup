@@ -51,8 +51,12 @@
     background-color: rgb(247, 198, 112);
 }
 
-#signup-page-link {
+.link {
     color: #fff;
+    font-size: 16px;
+}
+.link:hover {
+    color: #e3e3e3;
     font-size: 16px;
 }
 /* End Sign Up */

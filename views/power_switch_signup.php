@@ -97,6 +97,7 @@
     </div>
   </div>
 </form>
+<a id="signup-page-link" class="link" href="login-page">Déjà inscrit ? Connectez-vous.</a>
 
             </main>
           </div>
