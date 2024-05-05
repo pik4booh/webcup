@@ -51,7 +51,10 @@ Flight::route('/login', function () {
   $mail = $data['mail'];
   $mdp = $data['mdp'];
   $login_data = login($mail,$mdp);
-  
+  // var_dump($login_data);
+  session_start();
+  $_SESSION['user_id'] = $login_data['power_switch_user_id'];
+  Flight:redirect('/creation');
 });
 
 Flight::route('/signup', function () {
@@ -138,7 +141,8 @@ Flight::route('/create-superpower',function (){
   $rarity=$data[6];
   creerPouvoir($nom,$damage,$accuracy,$mana,$effect,$element,$type,$rarity);
   $last_superpower = get_last_superpower();
-  set_user_superpower(, $last_superpower);
+  set_user_superpower($_SESSION['user_id'], $last_superpower);
+  Flight::redirect('/create-superpower');
 });
 
 Flight::route('GET /genders', function (){

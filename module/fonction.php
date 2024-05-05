@@ -43,7 +43,7 @@
         $statement->bindParam(':mail', $mail, PDO::PARAM_STR);
         $statement->bindParam(':mdp', $mdp, PDO::PARAM_STR);
         $statement->execute();
-        $statistics = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $statistics = $statement->fetch(PDO::FETCH_ASSOC);
         // $statistics_json = json_encode($statistics);
 
         // $statement->closeCursor();
