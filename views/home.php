@@ -185,7 +185,7 @@
         <div class="bg-dark shadow rounded-5 p-0">
           <img src="assets/img/webp/abstract2.png" width="582" height="390" alt="abstract image" class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
           <div class="p-5">
-            <h2 class="fw-lighter">Air</h2>
+            <h2 class="fw-lighter">Vent</h2>
             <p class="pb-4 text-secondary">Envolez-vous vers les hauteurs du ciel et plongez dans l'essence de l'élément aérien, où la magie de la liberté et de la clairvoyance se déploie. Explorez les courants invisibles porteurs de messages, de rêves et d'inspiration, mais aussi capables de déclencher des tornades incontrôlables.</p>
             <a href="#" class="link-fancy link-fancy-light">En savoir plus
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
