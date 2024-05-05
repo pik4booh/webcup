@@ -80,13 +80,13 @@
   </a>
 </li>
 <li class="nav-item">
-  <a class="nav-link fs-5" href="#" aria-label="A system message page">
+  <a class="nav-link fs-5" href="troque" aria-label="A system message page">
     Troquer
   </a>
 </li>
 
     </ul>
-      <a href="front/signin" aria-label="Download this template" class="btn btn-light">
+      <a href="signin" aria-label="Download this template" class="btn btn-light">
         <small>S'inscrire</small>
       </a>
 </div>
@@ -115,8 +115,6 @@
         </div>
       </div>
       
-</svg>
-</a>
     </div>
   </div>
 </div>

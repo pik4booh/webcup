@@ -27,6 +27,12 @@ Flight::before('start', function(){
 Flight::route('/', function () {
     Flight::render('home.php');
 });
+Flight::route('/troque', function () {
+    Flight::render('troque.php');
+});
+Flight::route('/box', function () {
+    Flight::render('loot-box.php');
+});
 Flight::route('/login', function () {
     Flight::render('power_switch_login.php');
 });
