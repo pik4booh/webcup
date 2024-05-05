@@ -143,12 +143,12 @@ Flight::route('/create-superpower',function (){
   $type=preg_replace('/^\s+|\s+$/u', '', $superpower_characteristics[6]);
   $rarity=$superpower_characteristics[7];
 
-  session_start();
+  // session_start();
   creerPouvoir($nom,$damage,$accuracy,$mana,$effect,$element,$type,$rarity);
-  $last_superpower = get_last_superpower();
-  $user_id = $_SESSION['user_id'];
-  set_user_superpower($user_id, $last_superpower["max(power_switch_superpower_id)"]);
-  Flight::redirect('/create-superpower');
+  // $last_superpower = get_last_superpower();
+  // $user_id = $_SESSION['user_id'];
+  // set_user_superpower($user_id, $last_superpower["max(power_switch_superpower_id)"]);
+  // Flight::redirect('/create-superpower');
 });
 
 Flight::route('GET /genders', function (){
