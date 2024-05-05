@@ -57,15 +57,15 @@ Flight::route('/choices', function () {
     $c1 = $data['c1'];
     $c2 = $data['c2'];
     $c3 = $data['c3'];
-    singin($id,$c1,$c2,$c3);
+    addPower($id,$c1,$c2,$c3);
 });
 Flight::route('/dispo/@id/@minidpage', function ($id,$minidpage) {
     pouvoirsinsteressants($id,$minidpage);
 });
-Flight::route('/other', function ($id) {
+Flight::route('/mine/@id', function ($id) {
     mespouvoirs($id);
 });
-Flight::route('/historique', function ($id) {
+Flight::route('/historique/@id', function ($id) {
     historique($id);
 });
 Flight::route('/startTransaction', function () {
@@ -108,9 +108,6 @@ Flight::route('/createPower',function (){
     $type=$data['type'];
     $rarity=$data['rarity'];
     creerPouvoir($nom,$damage,$accuracy,$mana,$effect,$element,$type,$rarity);
-});
-Flight::map('error', function(Exception $ex){
-    echo $ex->getMessage();
 });
 
 Flight::start();

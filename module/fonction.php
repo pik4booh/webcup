@@ -56,12 +56,34 @@ function singin($fn, $ln, $gender, $mail, $mdp, $nickname)
     $statement->execute();
     $statement->closeCursor();
 }
-function addPower($idU,$pow1,$pow2,$pow3)
+function addPower($idU, $pow1, $pow2, $pow3)
 {
     global $database_connector;
-    $sql_request = 'insert into power_switch_transaction values(null,"'.$idU.'","'.$pow1.'","'.$idU.'","'.$pow1.'",now(),now(),now()),(null,"'.$idU.'","'.$pow2.'","'.$idU.'","'.$pow2.'",now(),now(),now()),(null,"'.$idU.'","'.$pow3.'","'.$idU.'","'.$pow3.'",now(),now(),now())';
+    
+    // Insert into power_switch_transaction
+    $sql_request = 'INSERT INTO power_switch_transaction VALUES 
+                    (null, :idU, :pow1, :idU, :pow1, now(), now(), now()),
+                    (null, :idU, :pow2, :idU, :pow2, now(), now(), now()),
+                    (null, :idU, :pow3, :idU, :pow3, now(), now(), now())';
     $statement = $database_connector->prepare($sql_request);
+    $statement->bindParam(':idU', $idU, PDO::PARAM_INT);
+    $statement->bindParam(':pow1', $pow1, PDO::PARAM_INT);
+    $statement->bindParam(':pow2', $pow2, PDO::PARAM_INT);
+    $statement->bindParam(':pow3', $pow3, PDO::PARAM_INT);
     $statement->execute();
+    
+    // Insert into power_switch_user_superpowers
+    $sql_request = 'INSERT INTO power_switch_user_superpowers VALUES 
+                    (null, :idU, :pow1, now()),
+                    (null, :idU, :pow2, now()),
+                    (null, :idU, :pow3, now())';
+    $statement = $database_connector->prepare($sql_request);
+    $statement->bindParam(':idU', $idU, PDO::PARAM_INT);
+    $statement->bindParam(':pow1', $pow1, PDO::PARAM_INT);
+    $statement->bindParam(':pow2', $pow2, PDO::PARAM_INT);
+    $statement->bindParam(':pow3', $pow3, PDO::PARAM_INT);
+    $statement->execute();
+    
     $statement->closeCursor();
 }
 
@@ -138,7 +160,10 @@ function create($id,$obj)
 function valide($idT,$id,$obj)
 {
     global $database_connector;
-    $sql_request = 'update power_switch_transaction set power_switch_buyer_id="'.$id.'",power_switch_transaction_superpower="'.$obj.'",power_switch_confirm_transaction_datetime=now() where power_switch_transaction_id='.$idT;
+    $sql_request = 'update power_switch_transaction set power_switch_buyer_id="'.$id.'",power_switch_transaction_superpower="'.$obj.'",power_switch_confirm_transaction_datetime=now() where power_switch_transaction_id='.$idT.' delete from power_switch_user_superpowers where (power_switch_user_id='.$id.' and power_switch_superpower_id='.$obj.') or (power_switch_user_id=(select power_switch_seller_id from power_switch_transaction where power_switch_transaction_id='.$idT.') and power_switch_superpower_id=(select power_switch_selled_superpower from power_switch_transaction where power_switch_transaction_id='.$idT.'))';
+    $statement = $database_connector->prepare($sql_request);
+    $statement->execute();
+    $sql_request = 'insert into power_switch_user_superpowers values(null,"'.$id.'",(select power_switch_selled_superpower from power_switch_transaction where power_switch_transaction_id='.$idT.')),(null,(select power_switch_selled_superpower from power_switch_transaction where power_switch_transaction_id='.$idT.'),"'.$obj.'")';
     $statement = $database_connector->prepare($sql_request);
     $statement->execute();
     $statement->closeCursor();
