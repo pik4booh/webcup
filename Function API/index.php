@@ -1,7 +1,6 @@
 <?php
-generatePouvoire("Je veux invoque des eclaire foudroiant");
+$array = generatePouvoire("Je veux invoque des eclaire foudroiant");
 function generatePouvoire($userInput){
-
 $API_KEY = "AIzaSyAXMrlFZpEgYbV96ficNxkZ3OpKVgv9jtM";
 
 $data = [
@@ -112,8 +111,7 @@ if(curl_error($curl)) {
     if ($response !== null) {
         if (isset($response['candidates']) && !empty($response['candidates'])) {
             $text = $response['candidates'][0]['content']['parts'][0]['text'];
-            echo $text;
-            spliteResult($text);
+            $result = spliteResult($text);
         } else {
             echo "No candidates found in the response.";
         }
@@ -122,10 +120,10 @@ if(curl_error($curl)) {
     }
 }
 curl_close($curl);
+return $result;
 }
 function spliteResult($text){
      $parts = explode('**', $text);
-     var_dump($parts);
      $nom = $parts[2];
      $dommages = $parts[4];
      $precision = $parts[6];
