@@ -38,7 +38,7 @@
     {
         global $database_connector;
 
-        $sql_request = "SELECT * from power_switch_user where power_switch_user_email=:mail and power_switch_user_password=:mdp";
+        $sql_request = "SELECT power_switch_user_id, power_switch_user_nickname from power_switch_user where power_switch_user_email=:mail and power_switch_user_password=:mdp";
         $statement = $database_connector->prepare($sql_request);
         $statement->bindParam(':mail', $mail, PDO::PARAM_STR);
         $statement->bindParam(':mdp', $mdp, PDO::PARAM_STR);

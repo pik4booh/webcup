@@ -104,6 +104,7 @@ curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
 $response = curl_exec($curl);
 $response = json_decode($response, true);
 // Check for errors
+$result = array();
 if(curl_error($curl)) {
     echo 'cURL error: ' . curl_error($curl);
 } else {
