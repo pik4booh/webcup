@@ -12,6 +12,7 @@
   <meta name="HandheldFriendly" content="true">
   <title>Register a new account</title>
   <link rel="stylesheet" href="assets/css/theme.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 
   </head>
@@ -35,35 +36,48 @@
               <hr>
               <br>
 
-<form class="row">
+<form action="https://localhost/WebCup-2024/webcup/signup" method="POST" class="row">
   <div class="sign_in_stepper">
     <div class="col-12">
         <div id="step1" class="step">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Nom</label>
-                <input type="text" class="form-control form-control-lg bg-gray-800 border-dark" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input name="ln" type="text" class="form-control form-control-lg bg-gray-800 border-dark" id="exampleInputName1" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Prénom</label>
-                <input type="text" class="form-control form-control-lg bg-gray-800 border-dark" id="exampleInputPassword1">
+                <input name="fn" type="text" class="form-control form-control-lg bg-gray-800 border-dark" id="exampleInputSurname1">
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Sexe</label>
-                <select id="signup-gender-dropdown" class="form-control form-control-lg bg-gray-800 border-dark">
-                    <option value="1">M</option>
-                    <option value="2">F</option>
-                </select>
+                <select name="gender" id="signup-gender-dropdown" class="form-control form-control-lg bg-gray-800 border-dark"></select>
+                <script>
+                  axios.get('https://localhost/WebCup-2024/webcup/genders')
+                    .then(response => {
+                        const genders = response.data;
+                        const select = document.getElementById('signup-gender-dropdown');
+                        genders.forEach(gender => {
+                            const option = document.createElement('option');
+                            option.value = gender.power_switch_gender_id;
+                            option.textContent = gender.power_switch_gender_name;
+                            select.appendChild(option);
+                        });
+                    })
+                    .catch(error => {
+                        console.error('Error fetching genders:', error);
+                    });
+                </script>
             </div>
             <button type="button" onclick="nextStep(2)" class="btn btn-white btn-xl mb-4 next-button">Suivant</button>
         </div>
         <div id="step2" class="step">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email</label>
-                <input type="email" class="form-control form-control-lg bg-gray-800 border-dark" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input name="mail" type="email" class="form-control form-control-lg bg-gray-800 border-dark" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Mot de passe</label>
-                <input type="password" class="form-control form-control-lg bg-gray-800 border-dark" id="exampleInputPassword1">
+                <input name="mdp" type="password" class="form-control form-control-lg bg-gray-800 border-dark" id="exampleInputPassword1">
             </div>
             <button type="button" onclick="prevStep(1)" class="btn btn-white btn-xl mb-4">Retour</button>
             <div class="to-the-right">
@@ -73,7 +87,7 @@
         <div id="step3" class="step">
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Quel sera votre pseudo ?</label>
-                <input type="text" class="form-control form-control-lg bg-gray-800 border-dark" id="exampleInputPassword1">
+                <input name="nickname" type="text" class="form-control form-control-lg bg-gray-800 border-dark" id="exampleInputPassword1">
             </div>
             <button type="button" onclick="prevStep(2)" class="btn btn-white btn-xl mb-4">Retour</button>
             <div class="to-the-right">
@@ -83,6 +97,7 @@
     </div>
   </div>
 </form>
+<a id="signup-page-link" class="link" href="login-page">Déjà inscrit ? Connectez-vous.</a>
 
             </main>
           </div>
