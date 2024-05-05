@@ -112,37 +112,50 @@
 
 </div>
 
+<div class="bg-black py-vh-3">
+  <div class="container bg-black px-vw-5 py-vh-3 rounded-5 shadow">
 
-
-<div class="w-100 position-relative bg-black text-white bg-cover d-flex align-items-center">
-  <div class="container-fluid px-vw-5">
-    <div class="position-absolute w-100 h-50 bg-dark bottom-0 start-0"></div>
-    <div class="row d-flex align-items-center position-relative justify-content-center px-0 g-5">
-      
-        <div class="col-12 " style="display:inline-flex; border-radius: 50px; padding:20px;">
-            <div class="card bg-transparent mb-5" data-aos="zoom-in-up">
-            <div class="bg-dark shadow rounded-5 p-0">
-              <img src="assets/img/webp/abstract3.png" width="582" height="327" alt="abstract image" class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
-              <div class="p-5">
-                <h2 class="fw-lighter">Eau</h2>
-                <p class="pb-4 text-secondary">description</p>
-                <a href="#" class="link-fancy link-fancy-light">en savoir plus
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-                    </svg>
-                </a>
+  <div class="row gx-5">
+    <div class="col-12 col-md-6">
+      <div class="card bg-transparent mb-5" data-aos="zoom-in-up">
+        <div class="bg-dark shadow rounded-5 p-0">
+          <img src="assets/img/webp/abstract3.png" width="582" height="327" alt="abstract image" class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
+          <div style="display:flex;justify-content:space-between;align-items:center; padding:5%">
+            <div><img src="assets/img/elements/1x/Elements - Water.png" alt="" width="20%"></div>
+            <div><img src="assets/img/stars/1x/Rarity - 5 Star.png" alt="" height="25px"></div>
+          </div>
+          <div class="p-5">
+            <h2 class="fw-lighter">Nom du pouvoir</h2>
+            <p class="pb-4 text-secondary">description du pouvoir</p>
+            <div style="display:inline-flex; marging-left:10%;">
+              <div style="display:flex;align-items:center;">
+                <img src="assets/img/spell/explosion.svg" alt="" width="40%">
+                  <span style="margin-left:5%">
+                    150 dmg
+                </span>
+              </div>
+              <div style="display:flex;align-items:center;">
+                <img src="assets/img/spell/rune.svg" alt="" width="40%">
+                  <span style="margin-left:5%">
+                    50%
+                  </span>
+              </div>
+              <div style="display:flex;align-items:center;">
+                <img src="assets/img/spell/scope.svg" alt="" width="40%">
+                  <span style="margin-left:5%">
+                    30 mana
+                </span>
               </div>
             </div>
-            </div>
-
+          </div>
         </div>
-        
+      </div>
 
-    </div>
-  </div>
+      
+</div>
 </div>
 
-</div>
+
 <br>
 <br>
 <br>
