@@ -38,10 +38,8 @@
     {
         global $database_connector;
 
-        $sql_request = "SELECT power_switch_user_id, power_switch_user_nickname from power_switch_user where power_switch_user_email=:mail and power_switch_user_password=:mdp";
+        $sql_request = 'SELECT * from power_switch_user where power_switch_user_email="'.$mail.'" and power_switch_user_password="'.$mdp.'"';
         $statement = $database_connector->prepare($sql_request);
-        $statement->bindParam(':mail', $mail, PDO::PARAM_STR);
-        $statement->bindParam(':mdp', $mdp, PDO::PARAM_STR);
         $statement->execute();
         $statistics = $statement->fetch(PDO::FETCH_ASSOC);
         // $statistics_json = json_encode($statistics);
@@ -56,14 +54,8 @@
     function singin($fn,$ln,$gender,$mail,$mdp,$nickname)
     {
         global $database_connector;
-        $sql_request = "insert into power_switch_user values(null,:fn,:ln,:gender,:mail,:mdp,:nickname) ";
+        $sql_request = 'insert into power_switch_user values(null,"'.$fn.'","'.$ln.'","'.$gender.'","'.$mail.'","'.$mdp.'","'.$nickname.'") ';
         $statement = $database_connector->prepare($sql_request);
-        $statement->bindParam(':fn', $fn, PDO::PARAM_STR);
-        $statement->bindParam(':ln', $ln, PDO::PARAM_STR);
-        $statement->bindParam(':gender', $gender, PDO::PARAM_INT);
-        $statement->bindParam(':mail', $mail, PDO::PARAM_STR);
-        $statement->bindParam(':mdp', $mdp, PDO::PARAM_STR);
-        $statement->bindParam(':nickname', $nickname, PDO::PARAM_STR);
         $statement->execute();
         $statement->closeCursor();
     }
@@ -71,12 +63,8 @@
     function addPower($idU,$pow1,$pow2,$pow3)
     {
         global $database_connector;
-        $sql_request = "insert into power_switch_transaction values(null,:idU,:pow1,:idU,:pow1,now(),now(),now()),insert into power_switch_transaction values(null,:idU,:pow2,:idU,:pow2,now(),now(),now()),insert into power_switch_transaction values(null,:idU,:pow3,:idU,:pow3,now(),now(),now())";
+        $sql_request = 'insert into power_switch_transaction values(null,"'.$idU.'","'.$pow1.'","'.$idU.'","'.$pow1.'",now(),now(),now()),(null,"'.$idU.'","'.$pow2.'","'.$idU.'","'.$pow2.'",now(),now(),now()),(null,"'.$idU.'","'.$pow3.'","'.$idU.'","'.$pow3.'",now(),now(),now())';
         $statement = $database_connector->prepare($sql_request);
-        $statement->bindParam(':idU', $idU, PDO::PARAM_INT);
-        $statement->bindParam(':pow1', $pow1, PDO::PARAM_INT);
-        $statement->bindParam(':pow2', $pow2, PDO::PARAM_INT);
-        $statement->bindParam(':pow3', $pow3, PDO::PARAM_INT);
         $statement->execute();
         $statement->closeCursor();
     }
@@ -101,9 +89,8 @@
     {
         global $database_connector;
 
-        $sql_request = "SELECT * from listpouvoir  where power_switch_superpower_id in (select power_switch_superpower_id from power_switch_user_superpowers where power_switch_user_id=:id)";
+        $sql_request = 'SELECT * from listpouvoir  where power_switch_superpower_id in (select power_switch_superpower_id from power_switch_user_superpowers where power_switch_user_id="'.$id.'")';
         $statement = $database_connector->prepare($sql_request);
-        $statement->bindParam(':id', $id, PDO::PARAM_INT);
         $statement->execute();
         $statistics = $statement->fetchAll(PDO::FETCH_ASSOC);
         $statistics_json = json_encode($statistics);
@@ -118,10 +105,8 @@
     {
         global $database_connector;
 
-        $sql_request = "select * from listpouvoir where power_switch_superpower_id not in (select power_switch_superpower_id from power_switch_user_superpowers where power_switch_user_id=:id) and power_switch_superpower_id>:minid";
+        $sql_request = 'select * from listpouvoir where power_switch_superpower_id not in (select power_switch_superpower_id from power_switch_user_superpowers where power_switch_user_id="'.$id.'") and power_switch_superpower_id>"'.$minid.'"';
         $statement = $database_connector->prepare($sql_request);
-        $statement->bindParam(':id', $id, PDO::PARAM_INT);
-        $statement->bindParam(':minid', $minid, PDO::PARAM_INT);
         $statement->execute();
         $statistics = $statement->fetchAll(PDO::FETCH_ASSOC);
         $statistics_json = json_encode($statistics);
@@ -135,9 +120,8 @@
     {
         global $database_connector;
 
-        $sql_request = "select * from listtransaction where power_switch_seller_id=:id or power_switch_buyer_id=:id";
+        $sql_request = 'select * from listtransaction where power_switch_seller_id="'.$id.'" or power_switch_buyer_id="'.$id.'"';
         $statement = $database_connector->prepare($sql_request);
-        $statement->bindParam(':id', $id, PDO::PARAM_INT);
         $statement->execute();
         $statistics = $statement->fetchAll(PDO::FETCH_ASSOC);
         $statistics_json = json_encode($statistics);
@@ -150,10 +134,8 @@
     function create($id,$obj)
     {
         global $database_connector;
-        $sql_request = "insert into power_switch_transaction values(null,:id,:obj,null,null,now(),null,null)";
+        $sql_request = 'insert into power_switch_transaction values(null,"'.$id.'","'.$obj.'",null,null,now(),null,null)';
         $statement = $database_connector->prepare($sql_request);
-        $statement->bindParam(':id', $id, PDO::PARAM_INT);
-        $statement->bindParam(':obj', $obj, PDO::PARAM_INT);
         $statement->execute();
         $statement->closeCursor();
     }
@@ -161,10 +143,8 @@
     function valide($idT,$id,$obj)
     {
         global $database_connector;
-        $sql_request = "update power_switch_transaction set power_switch_buyer_id=:id,power_switch_transaction_superpower=:obj,power_switch_confirm_transaction_datetime=now()";
+        $sql_request = 'update power_switch_transaction set power_switch_buyer_id="'.$id.'",power_switch_transaction_superpower="'.$obj.'",power_switch_confirm_transaction_datetime=now() where power_switch_transaction_id="'.$idT.'"';
         $statement = $database_connector->prepare($sql_request);
-        $statement->bindParam(':id', $id, PDO::PARAM_INT);
-        $statement->bindParam(':obj', $obj, PDO::PARAM_INT);
         $statement->execute();
         $statement->closeCursor();
     }
@@ -173,6 +153,7 @@
     {
         global $database_connector;
         $sql_request = "update power_switch_transaction set power_switch_buyer_id=:id,power_switch_transaction_superpower=:obj,power_switch_reject_transaction_datetime=now()";
+        $sql_request = 'update power_switch_transaction set power_switch_buyer_id="'.$id.'",power_switch_transaction_superpower="'.$obj.'",power_switch_confirm_transaction_datetime=now() where power_switch_transaction_id="'.$idT.'"';
         $statement = $database_connector->prepare($sql_request);
         $statement->bindParam(':id', $id, PDO::PARAM_INT);
         $statement->bindParam(':obj', $obj, PDO::PARAM_INT);

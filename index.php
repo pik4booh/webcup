@@ -46,7 +46,7 @@ Flight::route('/signup-page', function () {
 
 // Data Game Routes
 Flight::route('/login', function () {
-  $data = Flight::request()->data;
+  $data = Flight::request()->query;
 
   $mail = $data['mail'];
   $mdp = $data['mdp'];
@@ -58,7 +58,7 @@ Flight::route('/login', function () {
 });
 
 Flight::route('/signup', function () {
-  $data = Flight::request()->data;
+  $data = Flight::request()->query;
   $fn = $data['fn'];
   $ln = $data['ln'];
   $gender = $data['gender'];
@@ -70,12 +70,12 @@ Flight::route('/signup', function () {
 });
 
 Flight::route('/shuffle-superpowers', function () {
-  $data = Flight::request()->data;
+  $data = Flight::request()->query;
   shuffleItem();
 });
 
 Flight::route('/choose-superpowers', function () {
-  $data = Flight::request()->data;
+  $data = Flight::request()->query;
   $id = $data['id'];
   $c1 = $data['c1'];
   $c2 = $data['c2'];
@@ -87,30 +87,30 @@ Flight::route('/superpower-list/@id/@minidpage', function ($id,$minidpage) {
   pouvoirsinsteressants($id,$minidpage);
 });
 
-Flight::route('/my-superpower-list', function ($id,$minidpage) {
-  mespouvoirs($id);
+Flight::route('/my-superpower-list/@id/@minidpage', function ($id,$minidpage) {
+  mespouvoirs($id,$minidpage);
 });
 
-Flight::route('/transaction-history', function ($id) {
+Flight::route('/transaction-history/@id', function ($id) {
   historique($id);
 });
 
 Flight::route('/start-transaction', function () {
-  $data = Flight::request()->data;
+  $data = Flight::request()->query;
   $id=$data['id'];
   $obj=$data['obj'];
   create($id,$obj);
 });
 
-Flight::route('/validate-transaction', function ($idT,$id,$obj) {
+Flight::route('/validate-transaction/@idT/@id/@obj', function ($idT,$id,$obj) {
   valide($idT,$id,$obj);
 });
 
-Flight::route('/negate-transaction', function ($idT,$id,$obj) {
+Flight::route('/negate-transaction/@idT/@id/@obj', function ($idT,$id,$obj) {
   negate($idT,$id,$obj);
 });
 
-Flight::route('/pending-transaction', function ($id) {
+Flight::route('/pending-transaction/@', function ($id) {
   nonvalide($id);
 });
 
@@ -119,7 +119,7 @@ Flight::route('/chat/@id/@id2',function ($id,$id2){
 });
 
 Flight::route('/chat/send-message',function (){
-  $data = Flight::request()->data;
+  $data = Flight::request()->query;
   $id=$data['id'];
   $id2=$data['id2'];
   $mess=$data['message'];
@@ -127,7 +127,7 @@ Flight::route('/chat/send-message',function (){
 });
 
 Flight::route('/create-superpower',function (){
-  $data = Flight::request()->data;
+  $data = Flight::request()->query;
   $prompt = $data['superpower-prompt'];
   $superpower_characteristics = generatePouvoire($prompt);
 
