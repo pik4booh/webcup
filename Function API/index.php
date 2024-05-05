@@ -1,5 +1,4 @@
 <?php
-$array = generatePouvoire("Je veux invoque des eclaire foudroiant");
 function generatePouvoire($userInput){
 $API_KEY = "AIzaSyAXMrlFZpEgYbV96ficNxkZ3OpKVgv9jtM";
 
