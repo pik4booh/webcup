@@ -178,7 +178,7 @@
     </div>
     <div class="col-12 col-md-6">
       <div class="p-5 pt-0 mt-5" data-aos="fade">
-        <span class="h5 text-secondary fw-lighter"></span>
+        <span class="h5 text-secondary fw-lighter">Allons-y</span>
         <h2 class="display-4">Explorez un monde enchanté où les différentes catégories de magie vous attendent</h2>
       </div>
       <div class="card bg-transparent mb-5 mt-5" data-aos="zoom-in-up">
