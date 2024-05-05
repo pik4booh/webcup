@@ -3,6 +3,7 @@ require 'flight/Flight.php';
 require 'flight/autoload.php';
 require 'module/fonction.php';
 require 'module/connect.php';
+require 'Function API/function.php';
 
 
 // CORS Policy configuration
@@ -49,7 +50,8 @@ Flight::route('/login', function () {
 
   $mail = $data['mail'];
   $mdp = $data['mdp'];
-  login($mail,$mdp);
+  $login_data = login($mail,$mdp);
+  
 });
 
 Flight::route('/signup', function () {
@@ -123,15 +125,20 @@ Flight::route('/chat/send-message',function (){
 
 Flight::route('/create-superpower',function (){
   $data = Flight::request()->data;
-  $nom=$data['id'];
-  $damage=$data['id2'];
-  $accuracy=$data['message'];
-  $mana=$data['mana'];
-  $effect=$data['effect'];
-  $element=$data['element'];
-  $type=$data['type'];
-  $rarity=$data['rarity'];
+  $prompt = $data['superpower-prompt'];
+  $superpower_characteristics = generatePouvoire($prompt);
+
+  $nom=$superpower_characteristics[0];
+  $damage=$data[1];
+  $accuracy=$data[2];
+  $mana=$data[3];
+  $effect=$data[4];
+  $element=$data[5];
+  $type=$data[6];
+  $rarity=$data[6];
   creerPouvoir($nom,$damage,$accuracy,$mana,$effect,$element,$type,$rarity);
+  $last_superpower = get_last_superpower();
+  set_user_superpower(, $last_superpower);
 });
 
 Flight::route('GET /genders', function (){

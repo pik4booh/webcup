@@ -44,13 +44,13 @@
         $statement->bindParam(':mdp', $mdp, PDO::PARAM_STR);
         $statement->execute();
         $statistics = $statement->fetchAll(PDO::FETCH_ASSOC);
-        $statistics_json = json_encode($statistics);
+        // $statistics_json = json_encode($statistics);
 
-        $statement->closeCursor();
-        echo '<pre>';
-        print_r($statistics_json);
-        echo '</pre>';
-
+        // $statement->closeCursor();
+        // echo '<pre>';
+        // print_r($statistics_json);
+        // echo '</pre>';
+        return $statistics;
     }
 
     function singin($fn,$ln,$gender,$mail,$mdp,$nickname)
@@ -251,5 +251,26 @@
         $statement->execute();
         $genders = $statement->fetchAll(PDO::FETCH_ASSOC);
         return $genders;
+    }
+
+    function get_last_superpower()
+    {
+        global $database_connector;
+
+        $sql_request = "select max(power_switch_superpower_id) from power_switch_superpower";
+        $statement = $database_connector->prepare($sql_request);
+        $statement->execute();
+        $superpower = $statement->fetchColumn();
+        return $superpower;
+    }
+
+    function set_user_superpower($power_switch_user_id, $power_switch_superpower_id)
+    {
+        global $database_connector;
+
+        $sql_request = "insert into power_switch_user_superpowers values(null, ".$power_switch_user_id.", ".$power_switch_superpower_id.", current_timestamp)";
+        $statement = $database_connector->prepare($sql_request);
+        $statement->execute();
+        $statement->closeCursor();
     }
 ?>

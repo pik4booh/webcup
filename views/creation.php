@@ -108,11 +108,11 @@
               <p class="lead text-secondary">Lancez-vous et forgez-vous le meilleur set de sorts</p>
             </div>
             <div class="col-12 text-center">
-            <form action="#" method="POST" class="row">
+            <form action="create-superpower" method="POST" class="row">
                 <div class="col-12">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Enrer votre voeux</label>
-                    <input name="mail" type="email" class="form-control form-control-lg bg-gray-800 border-dark" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input name="superpower-prompt" type="text" class="form-control form-control-lg bg-gray-800 border-dark" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <button type="submit" id="login_button" class="btn btn-white btn-xl mb-4">Exaucer</button>
                 </div>
