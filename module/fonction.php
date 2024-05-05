@@ -38,8 +38,10 @@
     {
         global $database_connector;
 
-        $sql_request = "SELECT power_switch_user_id from power_switch_user where power_switch_user_email=:mail and power_switch_user_password=:mdp";
+        $sql_request = "SELECT * from power_switch_user where power_switch_user_email=:mail and power_switch_user_password=:mdp";
         $statement = $database_connector->prepare($sql_request);
+        $statement->bindParam(':mail', $mail, PDO::PARAM_STR);
+        $statement->bindParam(':mdp', $mdp, PDO::PARAM_STR);
         $statement->execute();
         $statistics = $statement->fetchAll(PDO::FETCH_ASSOC);
         $statistics_json = json_encode($statistics);
@@ -54,7 +56,7 @@
     function singin($fn,$ln,$gender,$mail,$mdp,$nickname)
     {
         global $database_connector;
-        $sql_request = "insert into power_switch_user values(null,':fn',':ln',':gender',':mail',':mdp',':nickname') select max(power_switch_user_id) from power_switch_user";
+        $sql_request = "insert into power_switch_user values(null,:fn,:ln,:gender,:mail,:mdp,:nickname) ";
         $statement = $database_connector->prepare($sql_request);
         $statement->bindParam(':fn', $fn, PDO::PARAM_STR);
         $statement->bindParam(':ln', $ln, PDO::PARAM_STR);
@@ -240,5 +242,14 @@
         echo '</pre>';
     }
 
-    
+    function get_genders()
+    {
+        global $database_connector;
+
+        $sql_request = "select * from power_switch_gender";
+        $statement = $database_connector->prepare($sql_request);
+        $statement->execute();
+        $genders = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $genders;
+    }
 ?>

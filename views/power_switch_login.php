@@ -31,15 +31,15 @@
             <main class="mb-auto col-12">
               <h1>Connectez-vous</h1>
               
-<form class="row">
+<form action="https://localhost/WebCup-2024/webcup/login" method="POST" class="row">
   <div class="col-12">
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email</label>
-    <input type="email" class="form-control form-control-lg bg-gray-800 border-dark" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input name="mail" type="email" class="form-control form-control-lg bg-gray-800 border-dark" id="exampleInputEmail1" aria-describedby="emailHelp">
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Mot de passe</label>
-    <input type="password" class="form-control form-control-lg bg-gray-800 border-dark" id="exampleInputPassword1">
+    <input name="mdp" type="password" class="form-control form-control-lg bg-gray-800 border-dark" id="exampleInputPassword1">
   </div>
   <button type="submit" id="login_button" class="btn btn-white btn-xl mb-4">Se connecter</button>
 </div>

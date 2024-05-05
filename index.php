@@ -57,6 +57,7 @@ Flight::route('/signup', function () {
   $mdp = $data['mdp'];
   $nickname = $data['nickname'];
   singin($fn,$ln,$gender,$mail,$mdp,$nickname);
+  Flight::redirect('/');
 });
 
 Flight::route('/shuffle-superpowers', function () {
@@ -127,6 +128,11 @@ Flight::route('/create-superpower',function (){
   $type=$data['type'];
   $rarity=$data['rarity'];
   creerPouvoir($nom,$damage,$accuracy,$mana,$effect,$element,$type,$rarity);
+});
+
+Flight::route('GET /genders', function (){
+  $genders = get_genders();
+  Flight::json($genders);
 });
 // End Data Game Routes
 
