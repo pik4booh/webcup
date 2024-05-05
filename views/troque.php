@@ -118,23 +118,25 @@
   <div class="container-fluid px-vw-5">
     <div class="position-absolute w-100 h-50 bg-dark bottom-0 start-0"></div>
     <div class="row d-flex align-items-center position-relative justify-content-center px-0 g-5">
-        <div class="col-12 col-md-6 col-lg-3" style="background-color: black; border-radius: 50px; padding:20px;">
-            <div class="elements">
-                <div class="element" style="display:inline-flex; z-index:100;">
-                    <h1>Title</h1>
-                    <img src="assets/img/stars/5.png" alt="">
-                </div>
+      
+        <div class="col-12 " style="display:inline-flex; border-radius: 50px; padding:20px;">
+            <div class="card bg-transparent mb-5" data-aos="zoom-in-up">
+            <div class="bg-dark shadow rounded-5 p-0">
+              <img src="assets/img/webp/abstract3.png" width="582" height="327" alt="abstract image" class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
+              <div class="p-5">
+                <h2 class="fw-lighter">Eau</h2>
+                <p class="pb-4 text-secondary">description</p>
+                <a href="#" class="link-fancy link-fancy-light">en savoir plus
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                    </svg>
+                </a>
+              </div>
             </div>
-            <img src="assets/img/webp/abstract6.png" width="1116" height="1578" alt="abstract image" class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up" data-aos-duration="2000">
-            <div class="col-12 col-lg-10 col-xl-8 text-center my-5" style="display:inline-flex; background-color:black;">
-                <div><img src="assets/img/spell/explosion.svg" alt="" width="50"><span>150 dmg</span></div>
-                <div><img src="assets/img/spell/rune.svg" alt="" width="50"><span>50%</span></div>
-                <div><img src="assets/img/spell/scope.svg" alt="" width="50"><span>30 mana</span></div>
             </div>
-            <div class="col-12 col-lg-10 col-xl-8 text-center my-5">
-                <p class="text-secondary text-center">Description of the power</p>
-            </div>
+
         </div>
+        
 
     </div>
   </div>
